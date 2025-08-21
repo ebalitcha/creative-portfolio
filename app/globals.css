@@ -4,48 +4,76 @@
 
 @layer base {
   :root {
+    /* Updated color scheme to modern red/orange palette */
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --foreground: 220 13% 26%;
+    --card: 0 86% 97%;
+    --card-foreground: 220 13% 26%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --popover-foreground: 220 13% 26%;
+    --primary: 0 84% 60%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 86% 97%;
+    --muted-foreground: 220 13% 26%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 220 13% 91%;
+    --input: 0 0% 100%;
+    --ring: 0 84% 60%;
+    --chart-1: 0 84% 60%;
+    --chart-2: 38 92% 50%;
+    --chart-3: 220 13% 26%;
+    --chart-4: 0 86% 97%;
+    --chart-5: 38 100% 93%;
     --radius: 0.5rem;
+    --sidebar: 0 86% 97%;
+    --sidebar-foreground: 220 13% 26%;
+    --sidebar-primary: 0 84% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 38 92% 50%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 0 84% 60%;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    /* Dark mode tokens for modern red/orange theme */
+    --background: 220 13% 9%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 220 13% 12%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 220 13% 9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 38 92% 50%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 5% 65%;
+    --accent: 38 92% 50%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62% 31%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 220 13% 15%;
+    --input: 220 13% 15%;
+    --ring: 0 84% 60%;
+    --chart-1: 0 84% 60%;
+    --chart-2: 38 92% 50%;
+    --chart-3: 0 0% 98%;
+    --chart-4: 220 13% 15%;
+    --chart-5: 38 100% 93%;
+    --sidebar: 220 13% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 84% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 38 92% 50%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 15%;
+    --sidebar-ring: 0 84% 60%;
   }
 }
 
@@ -65,6 +93,21 @@
   .animation-delay-4000 {
     animation-delay: 4s;
   }
+  .animation-delay-6000 {
+    animation-delay: 6s;
+  }
+}
+
+/* Added matrix rain animation and modern blob animations */
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
 }
 
 @keyframes blob {
@@ -82,6 +125,225 @@
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
+  }
+}
+
+/* Adding new animations for enhanced movement and matrix effects */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes morphing-bg {
+  0%,
+  100% {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--primary) / 0.1),
+      hsl(var(--secondary) / 0.1)
+    );
+  }
+  25% {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--secondary) / 0.1),
+      hsl(var(--accent) / 0.1)
+    );
+  }
+  50% {
+    background: linear-gradient(
+      225deg,
+      hsl(var(--accent) / 0.1),
+      hsl(var(--primary) / 0.1)
+    );
+  }
+  75% {
+    background: linear-gradient(
+      315deg,
+      hsl(var(--primary) / 0.1),
+      hsl(var(--secondary) / 0.1)
+    );
+  }
+}
+
+@keyframes floating-particles {
+  0% {
+    transform: translateY(100vh) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes skill-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .animate-blob {
   animation: blob 7s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.matrix-rain {
+  position: absolute;
+  color: hsl(var(--primary));
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  animation: matrix-rain 3s linear infinite;
+  opacity: 0.3;
+}
+
+.matrix-rain:nth-child(2n) {
+  color: hsl(var(--secondary) / 0.4);
+  animation-duration: 4s;
+  font-size: 12px;
+}
+
+.matrix-rain:nth-child(3n) {
+  color: hsl(var(--accent) / 0.3);
+  animation-duration: 5s;
+  font-size: 16px;
+}
+
+.matrix-rain:nth-child(4n) {
+  color: hsl(var(--primary) / 0.5);
+  animation-duration: 2.5s;
+  font-size: 10px;
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.glitch:hover::before,
+.glitch:hover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.glitch:hover::before {
+  animation: glitch 0.3s ease-in-out;
+  color: hsl(var(--primary));
+  z-index: -1;
+}
+
+.glitch:hover::after {
+  animation: glitch 0.3s ease-in-out reverse;
+  color: hsl(var(--secondary));
+  z-index: -2;
+}
+
+.morphing-bg {
+  animation: morphing-bg 8s ease-in-out infinite;
+}
+
+.floating-particles {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: hsl(var(--primary) / 0.6);
+  border-radius: 50%;
+  animation: floating-particles 15s linear infinite;
+}
+
+.floating-particles:nth-child(2n) {
+  background: hsl(var(--secondary) / 0.6);
+  animation-duration: 18s;
+}
+
+.floating-particles:nth-child(3n) {
+  background: hsl(var(--accent) / 0.6);
+  animation-duration: 12s;
+}
+
+.skill-reveal {
+  animation: skill-reveal 0.6s ease-out forwards;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary));
 }

@@ -1,161 +1,129 @@
-import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import Link from "next/link";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  Code,
+  Palette,
+  Zap,
+} from "lucide-react";
 
-import { ProjectCard } from "@/components/project-card"
-import { SkillBadge } from "@/components/skill-badge"
-import { Timeline } from "@/components/timeline"
-import { ContactForm } from "@/components/contact-form"
-import { CreativeHero } from "@/components/creative-hero"
-import { FloatingNav } from "@/components/floating-nav"
-import { MouseFollower } from "@/components/mouse-follower"
-import { ScrollProgress } from "@/components/scroll-progress"
-import { SectionHeading } from "@/components/section-heading"
-import { GlassmorphicCard } from "@/components/glassmorphic-card"
+import {Button} from "@/components/ui/button";
+import {ProjectCard} from "@/components/project-card";
+import {Timeline} from "@/components/timeline";
+import {ContactForm} from "@/components/contact-form";
+import {FloatingNav} from "@/components/floating-nav";
+import {MouseFollower} from "@/components/mouse-follower";
+import {ScrollProgress} from "@/components/scroll-progress";
+import {SectionHeading} from "@/components/section-heading";
+import {GlassmorphicCard} from "@/components/glassmorphic-card";
+import {MatrixRain} from "@/components/matrix-rain";
+import {InteractiveHero} from "@/components/interactive-hero";
+import {AnimatedSkillsGrid} from "@/components/animated-skills-grid";
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#012133] via-zinc-900 to-black text-white overflow-hidden">
-      <MouseFollower />
+    <div className="min-h-screen bg-background text-foreground overflow-hidden relative">
+      <MatrixRain />
+      {/* <MouseFollower /> */}
       <ScrollProgress />
       <FloatingNav />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#EF3D5E] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        </div>
-
-        <div className="container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="inline-block">
-              <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 mt-4">
-                <span className="relative z-10">Fullstack Web Developer</span>
-                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="block">Hi, I'm</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-neutral-500">
-               Earl Balitcha
-              </span>
-            </h1>
-            <p className="text-xl text-zinc-400 max-w-[600px]">
-              I craft exceptional digital experiences with code, creativity, and a passion for innovation.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0 px-6 py-3 rounded-md text-white font-medium transition-all hover:scale-105">
-                <span className="relative z-10 flex items-center">
-                  View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-              </button>
-              <button className="px-6 py-3 rounded-md border border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500 transition-colors">
-                Contact Me
-              </button>
-            </div>
-            <div className="flex gap-4 pt-4">
-              <Link href="https://github.com/shinekyaw" target="_blank" rel="noopener noreferrer">
-                <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
-                  <Github className="h-5 w-5" />
-                  <span className="sr-only">GitHub</span>
-                </button>
-              </Link>
-              <Link href="https://www.linkedin.com/in/shinekyawkyawaung/" target="_blank" rel="noopener noreferrer">
-                <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </button>
-              </Link>
-              <Link href="mailto:shinekyawkyawaung@gmail.com">
-                <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
-                  <Mail className="h-5 w-5" />
-                  <span className="sr-only">Email</span>
-                </button>
-              </Link>
-            </div>
-          </div>
-          <div className="flex justify-center">
-            <CreativeHero />
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center items-start p-1">
-            <div className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse"></div>
-          </div>
-        </div>
+      <section className="relative">
+        <InteractiveHero />
       </section>
 
       {/* About Section */}
       <section id="about" className="py-32 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-secondary/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="About Me" subtitle="My background and journey" />
+          <SectionHeading
+            title="About Me"
+            subtitle="My background and journey"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
             <div className="relative">
-              <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-70"></div>
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
+              <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-primary/20 to-secondary/20 blur-xl opacity-70"></div>
+              <div className="relative aspect-square rounded-xl overflow-hidden border border-border bg-card">
                 <img
                   src="/placeholder.svg?height=600&width=600"
-                  alt="Shine Kyaw Kyaw Aung"
+                  alt="Earl Balitcha"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-6">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-sm font-medium">Available for work</span>
+                    <span className="text-sm font-medium">
+                      Available for work
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 text-white">
               <GlassmorphicCard>
-                <p className="text-lg text-zinc-300">
-                  I'm a passionate software engineer with experience building web applications and digital products. I
-                  specialize in frontend development with React and Next.js, but I'm also comfortable working with
-                  backend technologies.
+                <p className="text-lg text-white text-muted-foreground leading-relaxed">
+                  I'm a passionate full stack web developer based in Tarlac
+                  City, specializing in building modern, responsive websites and
+                  applications using technologies like React.js, Next.js,
+                  Node.js, and more.
                 </p>
-                <p className="text-lg text-zinc-300 mt-4">
-                  My journey in tech started with a strong foundation in software development. I've worked with various
-                  companies to create intuitive, performant, and accessible digital experiences.
+                <p className="text-lg text-white text-muted-foreground mt-4 leading-relaxed">
+                  My journey began at Central Luzon State University where I
+                  studied Information Technology from 2019 to 2024. I gained
+                  valuable experience as a network engineering intern before
+                  transitioning to full-stack development.
                 </p>
-                <p className="text-lg text-zinc-300 mt-4">
-                  When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                  and staying up-to-date with the latest industry trends.
+                <p className="text-lg text-white text-muted-foreground mt-4 leading-relaxed">
+                  Currently working at Falcon Global Services Group, I handle
+                  everything from Shopify and React development to backend
+                  systems with Node.js and SQL Server, always focusing on
+                  creating accessible and user-friendly experiences.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Name</div>
-                    <div className="font-medium">Shine Kyaw Kyaw Aung</div>
+                    <div className="text-sm text-white text-muted-foreground">
+                      Name
+                    </div>
+                    <div className="font-medium">Earl Balitcha</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">shinekyawkyawaung@gmail.com</div>
+                    <div className="text-sm text-white text-muted-foreground">
+                      Email
+                    </div>
+                    <div className="font-medium">earlbalitcha@gmail.com</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Location</div>
-                    <div className="font-medium">Myanmar</div>
+                    <div className="text-sm text-white text-muted-foreground">
+                      Location
+                    </div>
+                    <div className="font-medium">Tarlac City, Philippines</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Availability</div>
-                    <div className="font-medium text-green-500">Open to opportunities</div>
+                    <div className="text-sm text-white text-muted-foreground">
+                      Availability
+                    </div>
+                    <div className="font-medium text-white">
+                      Open to opportunities
+                    </div>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <button className="px-6 py-3 bg-zinc-800 hover:bg-zinc-700 text-white rounded-md transition-colors">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     Download Resume
-                  </button>
+                  </Button>
                 </div>
               </GlassmorphicCard>
             </div>
@@ -166,26 +134,55 @@ export default function Portfolio() {
       {/* Skills Section */}
       <section id="skills" className="py-32 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-secondary/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="My Skills" subtitle="Technologies I work with" />
+          <SectionHeading
+            title="My Skills"
+            subtitle="Technologies I work with"
+          />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            <SkillBadge name="JavaScript" level={90} />
-            <SkillBadge name="TypeScript" level={85} />
-            <SkillBadge name="React" level={95} />
-            <SkillBadge name="Next.js" level={90} />
-            <SkillBadge name="Node.js" level={80} />
-            <SkillBadge name="HTML/CSS" level={95} />
-            <SkillBadge name="Tailwind CSS" level={90} />
-            <SkillBadge name="GraphQL" level={75} />
-            <SkillBadge name="PostgreSQL" level={70} />
-            <SkillBadge name="AWS" level={65} />
-            <SkillBadge name="Docker" level={60} />
-            <SkillBadge name="Git" level={85} />
+          <div className="mt-16">
+            <AnimatedSkillsGrid />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+            <div className="group text-center space-y-6 p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border hover:bg-card/50 transition-all duration-300 hover:scale-105">
+              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/20 transition-all duration-300">
+                <Code className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <h3 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">
+                Frontend Development
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                React, Next.js, Vue.js, TypeScript, Responsive Design
+              </p>
+            </div>
+            <div className="group text-center space-y-6 p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border hover:bg-card/50 transition-all duration-300 hover:scale-105">
+              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center group-hover:from-secondary/30 group-hover:to-secondary/20 transition-all duration-300">
+                <Zap className="h-10 w-10 text-secondary group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <h3 className="text-2xl font-bold group-hover:text-secondary transition-colors duration-300">
+                Backend Development
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Node.js, SQL Server, Prisma ORM, REST & GraphQL APIs
+              </p>
+            </div>
+            <div className="group text-center space-y-6 p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-border hover:bg-card/50 transition-all duration-300 hover:scale-105">
+              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300">
+                <Palette className="h-10 w-10 text-accent group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <h3 className="text-2xl font-bold group-hover:text-accent transition-colors duration-300">
+                UI/UX Design
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Figma, Responsive Design, Accessibility, User Experience
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -193,61 +190,69 @@ export default function Portfolio() {
       {/* Projects Section */}
       <section id="projects" className="py-32 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-secondary/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Featured Projects" subtitle="Some of my recent work" />
+          <SectionHeading
+            title="Featured Projects"
+            subtitle="Some of my recent work"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <ProjectCard
-              title="E-commerce Platform"
-              description="A full-stack e-commerce platform built with Next.js, Stripe, and Prisma."
-              tags={["Next.js", "TypeScript", "Prisma", "Stripe"]}
+              title="Super Host Depot"
+              description="E-commerce platform built with Next.js for hosting solutions and services."
+              tags={["Next.js", "TypeScript", "E-commerce", "Responsive"]}
               image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              demoUrl="https://superhostdepot.com"
+              repoUrl="https://github.com/earlbalitcha"
             />
             <ProjectCard
-              title="Task Management App"
-              description="A collaborative task management application with real-time updates."
-              tags={["React", "Firebase", "Tailwind CSS", "Redux"]}
+              title="XMGCA Platform"
+              description="Corporate website with multilingual support and modern design."
+              tags={[
+                "Next.js",
+                "Internationalization",
+                "Corporate",
+                "Modern UI",
+              ]}
               image="/placeholder.svg?height=400&width=600"
-              demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              demoUrl="https://xmgca.com/en"
+              repoUrl="https://github.com/earlbalitcha"
             />
             <ProjectCard
-              title="AI Content Generator"
-              description="An AI-powered content generation tool using OpenAI's GPT models."
-              tags={["Next.js", "OpenAI API", "Node.js", "MongoDB"]}
+              title="Shopify Integration"
+              description="Custom Shopify themes and integrations for e-commerce clients."
+              tags={["Shopify", "Liquid", "JavaScript", "Custom Themes"]}
               image="/placeholder.svg?height=400&width=600"
               demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              repoUrl="https://github.com/earlbalitcha"
             />
             <ProjectCard
-              title="Fitness Tracker"
-              description="A mobile-first fitness tracking application with data visualization."
-              tags={["React Native", "TypeScript", "D3.js", "Firebase"]}
+              title="HubSpot Integration"
+              description="CRM integration and automation solutions for business workflows."
+              tags={["HubSpot", "API Integration", "Automation", "CRM"]}
               image="/placeholder.svg?height=400&width=600"
               demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              repoUrl="https://github.com/earlbalitcha"
             />
             <ProjectCard
-              title="Weather Dashboard"
-              description="A beautiful weather dashboard with forecasts and historical data."
-              tags={["React", "Weather API", "Chart.js", "Styled Components"]}
+              title="React Dashboard"
+              description="Modern admin dashboard with data visualization and user management."
+              tags={["React", "TypeScript", "Dashboard", "Data Viz"]}
               image="/placeholder.svg?height=400&width=600"
               demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              repoUrl="https://github.com/earlbalitcha"
             />
             <ProjectCard
-              title="Portfolio Website"
-              description="This portfolio website built with Next.js and Tailwind CSS."
-              tags={["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"]}
+              title="Full Stack Web App"
+              description="Complete web application with authentication and database integration."
+              tags={["Next.js", "Node.js", "SQL Server", "Prisma"]}
               image="/placeholder.svg?height=400&width=600"
               demoUrl="https://example.com"
-              repoUrl="https://github.com"
+              repoUrl="https://github.com/earlbalitcha"
             />
           </div>
         </div>
@@ -256,12 +261,15 @@ export default function Portfolio() {
       {/* Experience Section */}
       <section id="experience" className="py-32 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/3 right-1/3 w-64 h-64 bg-secondary/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Work Experience" subtitle="My professional journey" />
+          <SectionHeading
+            title="Work Experience"
+            subtitle="My professional journey"
+          />
 
           <div className="mt-16">
             <Timeline />
@@ -272,8 +280,8 @@ export default function Portfolio() {
       {/* Contact Section */}
       <section id="contact" className="py-32 relative">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-          <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-secondary/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
         <div className="container relative z-10">
@@ -284,39 +292,56 @@ export default function Portfolio() {
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-purple-400" />
+                  <div className="w-12 h-12 rounded-full bg-card flex items-center justify-center">
+                    <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">shinekyawkyawaung@gmail.com</div>
+                    <div className="text-sm text-muted-foreground">Email</div>
+                    <div className="font-medium">earlbalitcha@gmail.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Linkedin className="h-5 w-5 text-purple-400" />
+                  <div className="w-12 h-12 rounded-full bg-card flex items-center justify-center">
+                    <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">LinkedIn</div>
-                    <div className="font-medium">linkedin.com/in/shinekyawkyawaung</div>
+                    <div className="text-sm text-muted-foreground">Phone</div>
+                    <div className="font-medium">+63 926 787 6389</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Github className="h-5 w-5 text-purple-400" />
+                  <div className="w-12 h-12 rounded-full bg-card flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">GitHub</div>
-                    <div className="font-medium">github.com/shinekyaw</div>
+                    <div className="text-sm text-muted-foreground">
+                      Location
+                    </div>
+                    <div className="font-medium">Tarlac City, Philippines</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-card flex items-center justify-center">
+                    <Linkedin className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground">
+                      LinkedIn
+                    </div>
+                    <div className="font-medium">
+                      linkedin.com/in/earlbalitcha
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-zinc-800">
+              <div className="mt-8 pt-8 border-t border-border">
                 <h4 className="text-lg font-medium mb-4">Current Status</h4>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span>Available for freelance work and full-time opportunities</span>
+                  <span>
+                    Available for freelance work and full-time opportunities
+                  </span>
                 </div>
               </div>
             </GlassmorphicCard>
@@ -327,39 +352,56 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-800 py-12">
+      <footer className="border-t border-border py-12 bg-card/50">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Shine</span>
-              <span className="text-white">KKA</span>
+            <Link href="/" className="font-bold text-xl font-montserrat">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                Earl
+              </span>
+              <span className="text-foreground">Balitcha</span>
             </Link>
-            <p className="text-sm text-zinc-500 mt-2">
-              © {new Date().getFullYear()} Shine Kyaw Kyaw Aung. All rights reserved.
+            <p className="text-sm text-muted-foreground mt-2">
+              © {new Date().getFullYear()} Earl Balitcha. All rights reserved.
             </p>
           </div>
           <div className="flex gap-4">
-            <Link href="https://github.com/shinekyaw" target="_blank" rel="noopener noreferrer">
-              <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
+            <Link
+              href="https://github.com/earlbalitcha"
+              target="_blank"
+              rel="noopener noreferrer">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full bg-card hover:bg-muted text-muted-foreground hover:text-primary">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
-              </button>
+              </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/shinekyawkyawaung/" target="_blank" rel="noopener noreferrer">
-              <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
+            <Link
+              href="https://www.linkedin.com/in/earlbalitcha/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full bg-card hover:bg-muted text-muted-foreground hover:text-primary">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
-              </button>
+              </Button>
             </Link>
-            <Link href="mailto:shinekyawkyawaung@gmail.com">
-              <button className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center">
+            <Link href="mailto:earlbalitcha@gmail.com">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full bg-card hover:bg-muted text-muted-foreground hover:text-primary">
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
-              </button>
+              </Button>
             </Link>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
